@@ -1,0 +1,28 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Buscar sucursales</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content >
+   <ion-router-outlet >
+    <ion-searchbar [debounce]="1000" (ionChange)="getSucursalId($event) "></ion-searchbar>
+    <ion-list *ngIf="results">
+      <ion-item>
+        <h3>Id: {{ results.id }}</h3>
+      </ion-item>
+      <ion-item>
+        <h3>Dirección: {{ results.direccion }}</h3>
+      </ion-item>
+      <ion-item>
+        <h3>Horarios de atención: {{ results.horarioDeAtencion }}</h3>
+      </ion-item>
+    </ion-list>
+   </ion-router-outlet>
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>Branch Finder</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</ion-app>
